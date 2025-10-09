@@ -2,7 +2,7 @@ import os
 import numpy as np
 import pandas as pd
 import json
-from RegGAN.reg_gan_dataloader import MyDataLoader
+from RegGAN.reg_gan_dataloader import MyDataLoader, my_dicoms_to_dataframe
 from RegGAN.trainer.reg_gan_trainer import RegGANTrainer
 import datetime
 
@@ -41,3 +41,4 @@ for i in range(len(DL.total_samples[0])):
 gan=RegGANTrainer(cfg, savepath = traindir + '/Models' + now.strftime("%Y%m%d%H%M")  + '/', data_loader=DL)
 
 gan.train(epochs=15, start_epochs=0, batch_size=1, sample_interval=100, model_interval=1, plot_interval=1)
+
