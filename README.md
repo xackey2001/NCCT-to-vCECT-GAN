@@ -28,6 +28,42 @@ NCCT-to-vCECT-GAN/
 ├─ reg_gan_metrics.py
 └─ README.md
 ```
+
+## 📁 Dataset Structure
+
+Before training, organize your DICOM data in the following folder structure:
+```
+/dataset/
+├─ case0001/
+│ ├─ CT1/ ← non-contrast CT (NCCT)
+│ │ ├─ 0001.dcm
+│ │ ├─ 0002.dcm
+│ │ └─ ...
+│ └─ CT2/ ← contrast-enhanced CT (CECT)
+│ ├─ 0001.dcm
+│ ├─ 0002.dcm
+│ └─ ...
+├─ case0002/
+│ ├─ CT1/
+│ └─ CT2/
+└─ ...
+```
+
+## 🧾 Data Preparation
+
+If `select.ftr` (the dataset metadata file) has not been created yet, run the following script to generate it.  
+This script loads DICOM metadata, converts slice positions to numeric values, sorts by patient ID and slice order, and saves the full dataset information as a `.ftr` file.
+
+```python
+cts = ('CT1', 'CT2')
+df = my_dicoms_to_dataframe(traindir, cts)  # headers.ftr will be saved in 'traindir'.
+df['zpos'] = df['zpos'].apply(pd.to_numeric)  # Convert 'zpos' from string to numeric.
+df = df.sort_values(by=['pid', 'ct', 'zpos'])  # Sort by patient ID, CT type, and z-position.
+df2 = df.reset_index(drop=True)  # Reset index after sorting.
+df2path = os.path.join(spath, 'select2.ftr')
+df2.to_feather(df2path)  # Save the dataset metadata to 'spath'.
+```
+
 ```
 #Example configuration inside the script:
 cfg = {
