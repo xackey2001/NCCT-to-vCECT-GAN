@@ -3,14 +3,13 @@
 This repository contains an implementation of a **Registration-Guided GAN (RegGAN)**  
 for synthesizing virtual contrast-enhanced CT (vCECT) from non-contrast CT (NCCT).  
 It also supports **Pix2Pix mode** by disabling the registration module.
-Supports 2D/3D input.
 
 ---
 
 ## 🚀 Features
 - 3D registration-guided GAN framework for thoracic imaging
 - Optional Pix2Pix mode (`regist=False`)
-- Supports DICOM loading, windowing, and resampling
+- Supports DICOM loading, windowing, and 2D/3D input
 - Training and inference scripts included
 
 ```text
