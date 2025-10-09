@@ -11,10 +11,8 @@ from RegGAN.reg_gan_dataloader import MyDataLoader
 
 # --- Directories ---
 testdir = r'/media/dataset01'        # Directory containing test DICOMs
-spath = r'/media/dataset01'          # Directory containing cfg.json and model files
-traindir = r'/media/dataset01'
-model_folder = os.path.join('/media/model_folder')
-
+spath = r'/media/dataset01'          # Directory containing cfg.json
+model_folder = os.path.join('/media/model_folder') # Directory containing model files
 
 # --- Load configuration generated during training ---
 with open(os.path.join(spath, 'cfg.json')) as json_file:
@@ -82,3 +80,4 @@ for case in tqdm(choice):
             saveimage=True        # save output images
         )
     )
+
