@@ -12,26 +12,23 @@ It also supports **Pix2Pix mode** by disabling the registration module.
 - Supports DICOM loading, windowing, and resampling
 - Training and inference scripts included
 
-- ## 🧩 Folder structure
+```text
 NCCT-to-vCECT-GAN/
 ├─ examples/
-│ ├─ train_reggan.py
-│ └─ inference_reggan.py
+│   ├─ train_reggan.py
+│   └─ inference_reggan.py
 ├─ trainer/
-│ ├─ reg_gan_trainer.py
-│ ├─ reg_gan_reg_unified.py
-│ ├─ reg_gan_layers_unified.py
-│ └─ reg_gan_transformer_unified.py
+│   ├─ reg_gan_trainer.py
+│   ├─ reg_gan_reg_unified.py
+│   ├─ reg_gan_layers_unified.py
+│   └─ reg_gan_transformer_unified.py
 ├─ Model/
-│ └─ reg_gan_Models_torch.py
+│   └─ reg_gan_Models_torch.py
 ├─ reg_gan_dataloader.py
 ├─ reg_gan_metrics.py
 └─ README.md
-
-
-🏋️ Training
-python examples/train_reggan.py
-
+```
+```
 #Example configuration inside the script:
 cfg = {
     'df_path': os.path.join(spath, 'select.ftr'),
@@ -45,6 +42,15 @@ cfg = {
     'regist': True,  # False enables Pix2Pix mode (direct NCCT-to-vCECT)
     'randomshift': 0.1
 }
+```
 
-#Inference
+
+## 🏋️ Training
+python examples/train_reggan.py
+
+## ✅Inference
 python examples/inference_reggan.py
+
+
+
+
