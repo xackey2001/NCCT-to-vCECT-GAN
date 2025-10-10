@@ -34,19 +34,28 @@ NCCT-to-vCECT-GAN/
 Before training, organize your DICOM data in the following folder structure:
 ```
 /dataset/
-├─ case0001/
-│ ├─ CT1/ ← non-contrast CT (NCCT)
-│ │ ├─ 0001.dcm
-│ │ ├─ 0002.dcm
-│ │ └─ ...
-│ └─ CT2/ ← contrast-enhanced CT (CECT)
-│ ├─ 0001.dcm
-│ ├─ 0002.dcm
-│ └─ ...
-├─ case0002/
-│ ├─ CT1/
-│ └─ CT2/
-└─ ...
+   ├─ case0001/
+   │   ├─ CT1/ ← non-contrast CT (NCCT)
+   │   │   ├─ 0001.dcm
+   │   │   ├─ 0002.dcm
+   │   │   └─ ...
+   │   └─ CT2/ ← contrast-enhanced CT (CECT)
+   │       ├─ 0001.dcm
+   │       ├─ 0002.dcm
+   │       └─ ...
+   ├─ case0002/
+   │   ├─ CT1/ ← non-contrast CT (NCCT)
+   │   │   ├─ 0001.dcm
+   │   │   ├─ 0002.dcm
+   │   │   └─ ...
+   │   └─ CT2/ ← contrast-enhanced CT (CECT)
+   │       ├─ 0001.dcm
+   │       ├─ 0002.dcm
+   │       └─ ...
+   ├─ case0003/
+   │   ├─ CT1/ ← non-contrast CT (NCCT)
+   │   └─ CT2/ ← contrast-enhanced CT (CECT)
+   └─ ...
 ```
 
 ## 🧾 Data Preparation
