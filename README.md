@@ -17,15 +17,17 @@ NCCT-to-vCECT-GAN/
 ├─ examples/
 │   ├─ train_reggan.py
 │   └─ inference_reggan.py
-├─ trainer/
-│   ├─ reg_gan_trainer.py
-│   ├─ reg_gan_reg_unified.py
-│   ├─ reg_gan_layers_unified.py
-│   └─ reg_gan_transformer_unified.py
-├─ Model/
-│   └─ reg_gan_Models_torch.py
-├─ reg_gan_dataloader.py
-├─ reg_gan_metrics.py
+├─ RegGAN/
+│   ├─ Model/
+│   │   └─ reg_gan_Models_torch.py
+│   ├─ trainer/
+│   │   ├─ reg_gan_trainer.py
+│   │   ├─ reg_gan_layers_unified.py
+│   │   ├─ reg_gan_reg_unified.py
+│   │   └─ reg_gan_transformer_unified.py
+│   ├─ reg_gan_dataloader.py
+│   ├─ reg_gan_metrics.py
+│   └─ reg_gan_postprocess.py
 └─ README.md
 ```
 
