@@ -1,4 +1,7 @@
+import sys
 import os
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+
 import numpy as np
 import pandas as pd
 import json
@@ -41,4 +44,5 @@ for i in range(len(DL.total_samples[0])):
 gan=RegGANTrainer(cfg, savepath = traindir + '/Models' + now.strftime("%Y%m%d%H%M")  + '/', data_loader=DL)
 
 gan.train(epochs=15, start_epochs=0, batch_size=1, sample_interval=100, model_interval=1, plot_interval=1)
+
 
