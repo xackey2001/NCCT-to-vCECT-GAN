@@ -1,8 +1,11 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+
 from RegGAN.Model.reg_gan_Models_torch import *
 from RegGAN.trainer.reg_gan_trainer import RegGANTrainer
 from RegGAN.reg_gan_postprocess import loop_over_case, make_directory, my_dicoms_to_dataframe
 from tqdm import tqdm
-import os
 import numpy as np
 import pandas as pd
 import json
@@ -80,4 +83,5 @@ for case in tqdm(choice):
             saveimage=True        # save output images
         )
     )
+
 
