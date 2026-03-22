@@ -60,6 +60,38 @@ Before training, organize your DICOM data in the following folder structure:
    └─ ...
 ```
 
+## 📦 Installation
+
+Install PyTorch following the instructions on the official website (via conda or pip):
+https://pytorch.org/get-started/locally/
+Make sure to install the latest version compatible with your hardware (CUDA, MPS, or CPU).
+
+Option 1: Using Conda (recommended)
+```
+conda create -n nnunet python=3.9 -y
+conda activate nnunet
+
+pip install torch torchvision torchaudio
+pip install pandas==2.1.4 pyarrow scikit-image pydicom tqdm natsort
+```
+
+Option 2: Using venv (no conda)
+```
+python -m venv nnunet
+nnunet\Scripts\activate   # Windows
+
+python -m pip install --upgrade pip
+pip install torch torchvision torchaudio
+pip install pandas==2.1.4 pyarrow scikit-image pydicom tqdm natsort
+```
+
+## 🔧 Notes
+Python 3.9 is recommended for compatibility.
+pandas==2.1.4 is required due to changes in newer versions.
+Install the appropriate PyTorch version depending on your environment (CPU/GPU).
+For GPU support, please refer to: https://pytorch.org/get-started/locally/
+
+
 ## 🧾 Data Preparation
 
 If `select.ftr` (the dataset metadata file) has not been created yet, run the following script to generate it.  
