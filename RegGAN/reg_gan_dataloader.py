@@ -31,11 +31,16 @@ def my_dicoms_to_dataframe(basedir, cts):
     #caselist = [os.path.join(basedir, x) for x in os.listdir(basedir) if os.path.isdir(os.path.join(basedir, x))]
     caselist = [os.path.join(basedir, x) for x in os.listdir(basedir) if 'case' in x]
     file_list = []
-    for x in cts:
-        file_list.extend(glob.glob(os.path.join(basedir, '*',x,'*.dcm')))
-    for x in cts:
-        file_list.extend(glob.glob(os.path.join(basedir, '*',x,'*.DCM')))
 
+    for x in cts:
+        file_list.extend(glob.glob(os.path.join(basedir, '*', x, '*.dcm')))
+        file_list.extend(glob.glob(os.path.join(basedir, '*', x, '*.DCM')))
+
+    caselist = natsorted(caselist)
+    file_list = natsorted(file_list)
+
+    file_list = list(dict.fromkeys(file_list))
+    
     caselist = natsorted(caselist)
     file_list = natsorted(file_list)
 
