@@ -62,11 +62,16 @@ Before training, organize your DICOM data in the following folder structure:
 
 ## 📦 Installation
 
+### 1. Install PyTorch
+
 Install PyTorch following the instructions on the official website (via conda or pip):
 https://pytorch.org/get-started/locally/
 Make sure to install the latest version compatible with your hardware (CUDA, MPS, or CPU).
 
-Option 1: Using Conda (recommended)
+### 2. Set up the environment
+
+#### Option 1: Using Conda (recommended)
+
 ```
 conda create -n nnunet python=3.9 -y
 conda activate nnunet
@@ -74,8 +79,7 @@ conda activate nnunet
 pip install torch torchvision torchaudio
 pip install pandas==2.1.4 pyarrow scikit-image pydicom tqdm natsort
 ```
-
-Option 2: Using venv (no conda)
+#### Option 2: Using venv (no conda)
 ```
 python -m venv nnunet
 nnunet\Scripts\activate   # Windows
